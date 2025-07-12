@@ -4,7 +4,7 @@ import { Outlet } from "react-router-dom";
 import logo from "../../Public/images/logo.svg";
 import dark from "../../Public/images/icon-moon.svg";
 import light from "../../Public/images/icon-sun.svg";
-import { DataContext } from "../app";
+import { DataContext } from "../App";
 
 const Mainlayout = () => {
   const { colorScheme, toggleColorScheme } = useContext(DataContext);
