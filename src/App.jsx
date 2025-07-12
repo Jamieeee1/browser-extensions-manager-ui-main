@@ -13,7 +13,7 @@ import data from "../data.json";
 import ErrorPage from "./components/ErrorPage";
 
 export const DataContext = createContext();
-const DataProvider = ({ children }) => {
+export const DataProvider = ({ children }) => {
   const [dataState, setDataState] = useState(data);
   const [colorScheme, setColorScheme] = useState("light");
   const toggleColorScheme = () => {

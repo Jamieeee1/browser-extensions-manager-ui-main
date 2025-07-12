@@ -18,9 +18,9 @@ const All = () => {
           <div>
             <button>Remove</button>
 
-            <label class="switch">
+            <label className="switch">
               <input type="checkbox" hidden />
-              <span class="slider round"></span>
+              <span className="slider round"></span>
             </label>
           </div>
         </div>
