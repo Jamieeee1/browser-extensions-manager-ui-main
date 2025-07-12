@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { DataContext } from "../app";
+import { DataContext } from "../App";
 
 const All = () => {
   const { dataState } = useContext(DataContext);
