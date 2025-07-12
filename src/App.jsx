@@ -42,7 +42,7 @@ export const DataProvider = ({ children }) => {
 const router = createBrowserRouter(
   createRoutesFromElements(
     <Route path="/" element={<Mainlayout />}>
-      <Route index element={<Active />} />
+      <Route index element={<All />} />
       <Route path="active" element={<Active />} />
       <Route path="inactive" element={<Inactive />} />
       <Route path="all" element={<All />} />
