@@ -1,7 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
+import { DataContext } from "../App";
+import Individual from "./Individual";
 
 const Inactive = () => {
-  return <div>Inactive</div>;
+  const { inActiveData } = useContext(DataContext);
+  return (
+    <div className="items-container">
+      {inActiveData.map((item) => (
+        <Individual item={item} />
+      ))}
+    </div>
+  );
 };
 
 export default Inactive;

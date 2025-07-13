@@ -1,29 +1,13 @@
 import React, { useContext } from "react";
 import { DataContext } from "../App";
+import Individual from "./Individual";
 
 const All = () => {
   const { dataState } = useContext(DataContext);
-  console.log(dataState);
   return (
-    <div className="all-container">
+    <div className="items-container">
       {dataState.map((item, key) => (
-        <div id={key}>
-          <div>
-            <img src={item.logo} alt="" />
-            <div>
-              <h3> {item.name} </h3>
-              <p>{item.description}</p>
-            </div>
-          </div>
-          <div>
-            <button>Remove</button>
-
-            <label className="switch">
-              <input type="checkbox" hidden />
-              <span className="slider round"></span>
-            </label>
-          </div>
-        </div>
+        <Individual item={item} />
       ))}
     </div>
   );

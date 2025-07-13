@@ -23,6 +23,24 @@ export const DataProvider = ({ children }) => {
       colorScheme === "light" ? "dark" : "light"
     );
   };
+  const toggleActiveStatus = (names) => {
+    setDataState((prevDatas) => {
+      const updated = prevDatas.map((data) =>
+        data.name === names ? { ...data, isActive: !data.isActive } : data
+      );
+      return updated;
+    });
+  };
+
+  const activeData = dataState.filter((item) => item.isActive === true);
+  const inActiveData = dataState.filter((item) => item.isActive === false);
+
+  const removeExtension = (names) => {
+    setDataState((preDatas) => {
+      const updated = preDatas.filter((item) => item.name !== names);
+      return updated;
+    });
+  };
 
   return (
     <DataContext.Provider
@@ -32,6 +50,10 @@ export const DataProvider = ({ children }) => {
         colorScheme,
         setColorScheme,
         toggleColorScheme,
+        toggleActiveStatus,
+        removeExtension,
+        activeData,
+        inActiveData,
       }}
     >
       {children}
