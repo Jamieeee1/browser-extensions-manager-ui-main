@@ -4,15 +4,15 @@ import { DataContext } from "../App";
 const Individual = ({ item }) => {
   const { toggleActiveStatus, removeExtension } = useContext(DataContext);
   return (
-    <div>
-      <div>
+    <div className="item-div">
+      <div className="item-top-div">
         <img src={item.logo} alt="" />
-        <div>
+        <div className="item-top-inner">
           <h3> {item.name} </h3>
-          <p>{item.description}</p>
+          <p className="item-description">{item.description}</p>
         </div>
       </div>
-      <div>
+      <div className="item-bottom-div">
         <button
           className="remove-btn"
           onClick={() => removeExtension(item.name)}

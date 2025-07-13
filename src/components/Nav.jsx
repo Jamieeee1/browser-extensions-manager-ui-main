@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 
 const Nav = () => {
   return (
-    <>
+    <div className="nav">
       <h2>Extensions List</h2>
       <ul className="nav-list">
         <li>
@@ -31,7 +31,7 @@ const Nav = () => {
           </NavLink>
         </li>
       </ul>
-    </>
+    </div>
   );
 };
 

@@ -10,7 +10,7 @@ const Mainlayout = () => {
   const { colorScheme, toggleColorScheme } = useContext(DataContext);
   const checkColorScheme = () => (colorScheme === "light" ? dark : light);
   return (
-    <>
+    <div className="cover-div">
       <div className="header">
         <img src={logo} alt="logo" />
         <div>
@@ -26,13 +26,13 @@ const Mainlayout = () => {
           </label>
         </div>
       </div>
-      <nav className="nav">
+      <>
         <Nav />
-      </nav>
+      </>
       <div className="outlet">
         <Outlet />
       </div>
-    </>
+    </div>
   );
 };
 
