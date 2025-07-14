@@ -8,11 +8,12 @@ import { DataContext } from "../App";
 
 const Mainlayout = () => {
   const { colorScheme, toggleColorScheme } = useContext(DataContext);
-  const checkColorScheme = () => (colorScheme === "light" ? dark : light);
+  const checkColorScheme = () =>
+    colorScheme === "light" ? "/images/icon-moon.svg" : "/images/icon-sun.svg";
   return (
     <div className="cover-div">
       <div className="header">
-        <img src={logo} alt="logo" />
+        <img src="/images/logo.svg" alt="logo" />
         <div>
           <label htmlFor="color-scheme" className="switch-color">
             <img src={checkColorScheme()} alt="" />
