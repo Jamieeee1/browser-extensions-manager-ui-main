@@ -24,9 +24,38 @@
   --Light-Gradient: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
   --Dark-Gradient: linear-gradient(180deg, #040918 0%, #091540 100%);
 
+  /* font-weights */
   --weight-one: 400;
   --weight-two: 500;
   --weight-three: 700;
+
+  --body-background: linear-gradient(180deg, #ebf2fc 0%, #eef8f9 100%);
+  --background-one: hsl(226, 25%, 17%);
+  --text-color: hsl(227, 75%, 14%);
+  --description-color: hsl(226, 11%, 37%);
+  --slider-background: hsl(0, 0%, 78%);
+  --slider-background-after: hsl(3, 77%, 44%);
+  --btn-hover: hsl(3, 77%, 44%);
+  --btn-hover-text: hsl(0, 0%, 93%);
+  --focus-border: hsl(0, 0%, 93%);
+  --focus-shadow: hsl(3, 71%, 56%);
+  --btn-focus-background: hsl(0, 0%, 78%);
+}
+
+[data-theme="dark"] {
+  --body-background: linear-gradient(180deg, #040918 0%, #091540 100%);
+  --background-one: hsl(0, 0%, 93%);
+
+  --border-color: hsl(226, 11%, 37%);
+  --text-color: hsl(0, 0%, 93%);
+  --description-color: hsl(0, 0%, 78%);
+  --slider-background: hsl(226, 11%, 37%);
+  --slider-background-after: hsl(3, 86%, 64%);
+  --btn-hover: hsl(3, 86%, 64%);
+  --btn-hover-text: hsl(227, 75%, 14%);
+  --focus-border: hsl(227, 75%, 14%);
+  --focus-shadow: hsl(3, 71%, 56%);
+  --btn-focus-background: hsl(225, 23%, 24%);
 }
 
 body {
@@ -60,7 +89,7 @@ ul {
 }
 
 .header {
-  background-color: var(--Neutral-700);
+  background-color: var(--Neutral-800);
   border-radius: 10px;
   padding: 0.5em;
   width: 100%;
@@ -68,6 +97,23 @@ ul {
   justify-content: space-between;
   align-items: center;
 }
+
+/* .color-scheme {
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+.custom-checkbox {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  width: 34px;
+  height: 34px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background-color: var(--Neutral-800);
+} */
 
 .nav {
   display: flex;
@@ -91,16 +137,15 @@ ul {
 .nav .nav-list a {
   border-radius: 16px;
   padding: 10px 15px;
-  background-color: var(--Neutral-700);
+  background-color: var(--Neutral-800);
 }
 
-/* .nav .nav-list a:focus {
-
-} */
+.nav .nav-list a:hover {
+  filter: brightness(1.4);
+}
 
 .nav .nav-list .inactive {
-  border: 1px solid var(--Neutral-200);
-  color: var(--Neutral-100);
+  border: 1px solid var(--Neutral-600);
 }
 
 .nav .nav-list .active {
@@ -187,7 +232,7 @@ ul {
   left: 2px;
   right: 0;
   bottom: 0;
-  background-color: var(--Neutral-200);
+  background-color: var(--Neutral-600);
   -webkit-transition: 0.4s;
   transition: 0.4s;
 }
