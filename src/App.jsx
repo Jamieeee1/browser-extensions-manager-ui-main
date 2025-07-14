@@ -14,8 +14,12 @@ import ErrorPage from "./components/ErrorPage";
 
 export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
+  const prefersDarkScheme = window.matchMedia(
+    "(prefers-color-scheme: dark)"
+  ).matches;
+  const checkScheme = () => (prefersDarkScheme ? "dark" : "light");
   const [dataState, setDataState] = useState(data);
-  const [colorScheme, setColorScheme] = useState("light");
+  const [colorScheme, setColorScheme] = useState(checkScheme);
   const toggleColorScheme = () => {
     setColorScheme((prev) => (prev === "light" ? "dark" : "light"));
     document.documentElement.setAttribute(
