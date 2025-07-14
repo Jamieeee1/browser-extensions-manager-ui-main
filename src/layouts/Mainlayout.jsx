@@ -1,9 +1,6 @@
 import React, { useContext } from "react";
 import Nav from "../components/Nav";
 import { Outlet } from "react-router-dom";
-import logo from "../../Public/images/logo.svg";
-import dark from "../../Public/images/icon-moon.svg";
-import light from "../../Public/images/icon-sun.svg";
 import { DataContext } from "../App";
 
 const Mainlayout = () => {
