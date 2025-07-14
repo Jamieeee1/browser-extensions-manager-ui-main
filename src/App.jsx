@@ -1,4 +1,4 @@
-import React, { createContext, useState } from "react";
+import React, { createContext, useState, useEffect } from "react";
 import {
   RouterProvider,
   Route,
@@ -14,18 +14,33 @@ import ErrorPage from "./components/ErrorPage";
 
 export const DataContext = createContext();
 export const DataProvider = ({ children }) => {
-  const prefersDarkScheme = window.matchMedia(
-    "(prefers-color-scheme: dark)"
-  ).matches;
-  const checkScheme = () => (prefersDarkScheme ? "dark" : "light");
+  const getSystemTheme = () => {
+    return window.matchMedia("(prefers-color-scheme: dark)").matches
+      ? "dark"
+      : "light";
+  };
+
   const [dataState, setDataState] = useState(data);
-  const [colorScheme, setColorScheme] = useState(checkScheme);
+  const [colorScheme, setColorScheme] = useState(getSystemTheme);
+
+  useEffect(() => {
+    document.documentElement.setAttribute("data-theme", colorScheme);
+  }, [colorScheme]);
+
+  useEffect(() => {
+    const mediaQuery = window.matchMedia("(prefers-color-scheme: dark)");
+
+    const handleChange = (e) => {
+      setColorScheme(e.matches ? "dark" : "light");
+    };
+
+    mediaQuery.addEventListener("change", handleChange);
+
+    return () => mediaQuery.removeEventListener("change", handleChange);
+  }, []);
+
   const toggleColorScheme = () => {
     setColorScheme((prev) => (prev === "light" ? "dark" : "light"));
-    document.documentElement.setAttribute(
-      "data-theme",
-      colorScheme === "light" ? "dark" : "light"
-    );
   };
   const toggleActiveStatus = (names) => {
     setDataState((prevDatas) => {
