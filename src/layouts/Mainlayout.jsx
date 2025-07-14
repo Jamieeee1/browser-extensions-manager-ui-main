@@ -13,7 +13,6 @@ const Mainlayout = () => {
         <img src="/images/logo.svg" alt="logo" />
         <div>
           <label htmlFor="color-scheme" className="switch-color">
-            <img src={checkColorScheme()} alt="" />
             <input
               type="checkbox"
               name=""
@@ -21,6 +20,9 @@ const Mainlayout = () => {
               id="color-scheme"
               hidden
             />
+            <span className="custom-checkbox">
+              <img src={checkColorScheme()} alt="color-sector" />
+            </span>
           </label>
         </div>
       </div>
