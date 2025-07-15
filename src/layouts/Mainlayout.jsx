@@ -10,7 +10,7 @@ const Mainlayout = () => {
   return (
     <div className="cover-div">
       <div className="header">
-        <img src="/images/logo.svg" alt="logo" />
+        <img src="/images/logo.svg" className="logo" alt="logo" />
         <div>
           <label htmlFor="color-scheme" className="switch-color">
             <input

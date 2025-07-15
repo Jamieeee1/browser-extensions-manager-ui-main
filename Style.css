@@ -7,14 +7,14 @@
 
 :root {
   /* Neutral */
-  /* --Neutral-900: hsl(227, 75%, 14%);
+  --Neutral-900: hsl(227, 75%, 14%);
   --Neutral-800: hsl(226, 25%, 17%);
   --Neutral-700: hsl(225, 23%, 24%);
   --Neutral-600: hsl(226, 11%, 37%);
   --Neutral-300: hsl(0, 0%, 78%);
   --Neutral-200: hsl(217, 61%, 90%);
   --Neutral-100: hsl(0, 0%, 93%);
-  --Neutral-0: hsl(200, 60%, 99%); */
+  --Neutral-0: hsl(200, 60%, 99%);
   /* Red */
   /* --Red-400: hsl(3, 86%, 64%);
   --Red-500: hsl(3, 71%, 56%);
@@ -42,6 +42,9 @@
   --focus-border: hsl(0, 0%, 93%);
   --focus-shadow: hsl(3, 71%, 56%);
   --btn-focus-background: hsl(0, 0%, 78%);
+  --logo: invert(0%);
+  --image-span: hsl(0, 0%, 93%);
+  --image-span-hover: hsl(0, 0%, 78%);
 }
 
 [data-theme="dark"] {
@@ -58,6 +61,9 @@
   --focus-border: hsl(227, 75%, 14%);
   --focus-shadow: hsl(3, 71%, 56%);
   --btn-focus-background: hsl(225, 23%, 24%);
+  --logo: invert(100%);
+  --image-span: hsl(225, 23%, 24%);
+  --image-span-hover: hsl(226, 11%, 37%);
 }
 
 body {
@@ -100,13 +106,18 @@ ul {
   align-items: center;
 }
 
-/* .color-scheme {
+.header .logo {
+  filter: var(--logo);
+}
+
+.color-scheme {
   cursor: pointer;
   display: flex;
   align-items: center;
 }
 
 .custom-checkbox {
+  cursor: pointer;
   display: inline-flex;
   justify-content: center;
   align-items: center;
@@ -114,8 +125,12 @@ ul {
   height: 34px;
   border-radius: 10px;
   border: 1px solid transparent;
-  background-color: var(--Neutral-800);
-} */
+  background-color: var(--image-span);
+}
+
+.custom-checkbox:hover {
+  background-color: var(--image-span-hover);
+}
 
 .nav {
   display: flex;
