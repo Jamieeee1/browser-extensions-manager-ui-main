@@ -86,7 +86,7 @@ const router = createBrowserRouter(
       <Route index element={<All />} />
       <Route path="active" element={<Active />} />
       <Route path="inactive" element={<Inactive />} />
-      <Route path="all" element={<All />} />
+      <Route path="/" element={<All />} />
       <Route path="*" element={<ErrorPage />} />
     </Route>
   )

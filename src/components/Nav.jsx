@@ -8,7 +8,7 @@ const Nav = () => {
       <ul className="nav-list">
         <li>
           <NavLink
-            to="/all"
+            to="/"
             className={({ isActive }) => (isActive ? "active" : "inactive")}
           >
             All
